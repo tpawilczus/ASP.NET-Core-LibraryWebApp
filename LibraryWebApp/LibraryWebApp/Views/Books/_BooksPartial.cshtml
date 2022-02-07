@@ -1,0 +1,27 @@
+﻿@model Book
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => Model.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.Author)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.ISBN)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.BookCategory.Name)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@Model.BookId">Edit</a> |
+        <a asp-action="Details" asp-route-id="@Model.BookId">Details</a> |
+        <a asp-action="Delete" asp-route-id="@Model.BookId">Delete</a>
+    </td>
+</tr>

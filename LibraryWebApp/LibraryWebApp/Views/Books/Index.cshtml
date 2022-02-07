@@ -1,0 +1,39 @@
+﻿@model IEnumerable<LibraryWebApp.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a> |
+    <a asp-action="OrderByName">Order By Name</a> |
+    <a asp-action="OrderByNameDescending">Order By Name Descending</a> |
+    <a asp-action="OrderByAuthor">Order By Author</a> |
+    <a asp-action="OrderByCategory">Order By Category</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ISBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCategory)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <partial name="_BooksPartial" model="item"/>
+}
+    </tbody>
+</table>
